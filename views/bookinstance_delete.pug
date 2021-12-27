@@ -1,13 +1,13 @@
 extends layout
 
 block content
-  h1 #{title}: #{book.name}
-  p= book.lifespan
+  h1 #{title}: #{book_instances._id}
+  p= book_instances.lifespan
 
-    p Do you really want to delete this Book?
+    p Do you really want to delete this Book Instance?
 
     form(method='POST' action='')
       div.form-group
-        input#bookid.form-control(type='hidden',name='bookid', required='true', value=book._id )
+        input#bookinstanceid.form-control(type='hidden',name='bookinstanceid', required='true', value=book_instances._id )
 
       button.btn.btn-primary(type='submit') Delete
